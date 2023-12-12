@@ -1,5 +1,5 @@
 # Use an official Alpine image as the base
-FROM rust
+FROM debian:bullseye-slim
 
 # Set the working directory in the container to /app
 WORKDIR /app
@@ -9,6 +9,9 @@ COPY ./dist .
 
 # Copy the 'run.sh' file
 COPY ./run.sh .
+
+# Install dependencies
+RUN apt-get update && apt-get install -y extra-runtime-dependencies && rm -rf /var/lib/apt/lists/*
 
 # Make sure run.sh and ai00_server have execute permissions
 RUN chmod +x run.sh
