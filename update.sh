@@ -3,11 +3,8 @@
 # Target repository URL
 docker_hub_url="https://hub.docker.com/r/tsfreddie/ai00_rwkv_docker"
 
-# GitHub repository URL
-repo_url="https://github.com/cgisky1980/ai00_rwkv_server"
-
-# GitHub API URL to get the latest release
-api_url="$repo_url/releases/latest"
+# GitHub repository release api URL
+api_url="https://api.github.com/repos/cgisky1980/ai00_rwkv_server/releases/latest"
 
 # Get the latest release version from the GitHub API
 latest_release=$(curl -sSL "$api_url" | grep -oP '"tag_name": "\K(.*?)(?=")')
