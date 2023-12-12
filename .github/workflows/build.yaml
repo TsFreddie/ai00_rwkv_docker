@@ -21,7 +21,6 @@ jobs:
 
     - name: Run update.sh
       run: bash update.sh
-      continue-on-error: true
 
     - name: Build and push Docker image
       if: ${{ success() }}
