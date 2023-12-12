@@ -11,7 +11,7 @@ COPY ./dist .
 COPY ./run.sh .
 
 # Install dependencies
-RUN apt-get update && apt-get install -y extra-runtime-dependencies vulkan-tools vulkan-validationlayers libvulkan1 libvulkan-dev mesa-vulkan-drivers && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y vulkan-tools vulkan-validationlayers libvulkan1 libvulkan-dev mesa-vulkan-drivers && rm -rf /var/lib/apt/lists/*
 
 # Make sure run.sh and ai00_server have execute permissions
 RUN chmod +x run.sh
