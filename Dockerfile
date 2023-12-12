@@ -1,5 +1,5 @@
 # Use an official Alpine image as the base
-FROM debian:bullseye-slim
+FROM debian:bookworm-slim
 
 # Set the working directory in the container to /app
 WORKDIR /app
